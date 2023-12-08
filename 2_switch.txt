@@ -1,0 +1,78 @@
+while true; do 
+echo 1. Listing the files and directory 
+echo  2. Create the directory 
+echo   3.Print current working directory 
+echo  4.Change the current working directory 
+echo   5.Delete the directory
+echo     6.Create the file 
+echo     7.Display the contents of the file 
+echo     8.Copy the contents of the file 
+echo     9.Renaming the file 
+echo     10.Delete the file 
+      
+ 
+echo Enter the choice : 
+read ch 
+case $ch in 
+1)echo Display the list of files and directories 
+ls 
+;; 
+2)echo Create the new diretory echo Enter the name of directory to be created 
+read newdirnm
+mkdir $newdirnm 
+;; 
+3)echo Print the current working directory 
+pwd 
+;; 
+4)echo Change the currently working directory 
+echo Enter the name of directory to change 
+read chdirnm 
+cd $chdir 
+;; 
+5)echo Delete the directory 
+echo Enter the name of directory to be deleted 
+read dirname 
+rmdir $dirname 
+;; 
+6)echo Create the new file 
+echo Enter the file name to be create 
+read filenm 
+touch $filenm 
+;; 
+7)echo Display the content of the file 
+echo Enter the file name to display content 
+read filename 
+cat $filename 
+;; 
+8)echo Copy the content of the file 
+echo Enter the file name to be copied 
+read filenm 
+echo Enter the file name where to copy 
+read filename 
+cp $filenm $filename 
+;; 
+9)echo Renaming the file 
+echo Enter the original file to rename 
+read original 
+echo Enter the renamed file to rename 
+read rename 
+mv $original $rename 
+;; 
+10)echo Delete the file 
+echo Enter the filename to be deleted 
+read filenm 
+rm $filenm 
+;; 
+*)echo You enter the invalid choice 
+;; 
+esac 
+ 
+read -p "Do you want to continue (y/n)" continue_choice 
+if [ "$continue_choice" != "y" ] 
+then 
+echo "Exiting..." 
+exit 0 
+fi 
+done 
+
+

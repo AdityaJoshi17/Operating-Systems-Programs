@@ -1,0 +1,20 @@
+
+
+
+
+
+echo “Enter Filename”
+read filenm
+if [ -e $filenm ];
+then
+echo “file exists”
+if [ -s $filenm ];
+then
+echo “size>0”
+else
+echo “file removed”
+rm $filenm
+fi
+else 
+echo “File not present”
+fi

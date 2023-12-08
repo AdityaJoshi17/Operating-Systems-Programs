@@ -1,0 +1,10 @@
+cat -n a1.txt > a2.txt
+cat a2.txt
+
+sort -k2 a2.txt > a3.txt 
+cat a3.txt
+
+uniq -f1 a3.txt > a4.txt 
+cat a4.txt
+
+cut -f2 a4.txt
